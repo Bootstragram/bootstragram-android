@@ -18,6 +18,7 @@ import android.widget.Button;
 import android.widget.ListView;
 
 import com.bootstragram.demo.currencyrates.CurrencyRate;
+import com.bootstragram.demo.currencyrates.ExchangeRatesParser;
 
 public class BackgroundOperationDemoActivity extends Activity {
     private static final String TAG = BackgroundOperationDemoActivity.class.getSimpleName();

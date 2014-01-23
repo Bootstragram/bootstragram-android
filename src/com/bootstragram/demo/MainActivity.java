@@ -17,6 +17,19 @@ import android.widget.Button;
  */
 public class MainActivity extends Activity {
 
+    @SuppressWarnings("rawtypes")
+    private void onClick(int buttonId, final Activity callingActivity, final Class destActivityClass) {
+        Button button = (Button) findViewById(buttonId);
+        button.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(callingActivity, destActivityClass);
+                MainActivity.this.startActivity(intent);
+            }
+        });
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,15 +39,8 @@ public class MainActivity extends Activity {
         View backgroundView = findViewById(R.id.my_main_activity_background);
         backgroundView.setBackgroundColor(Color.argb(255, 250, 250, 250));
 
-        // Button to start the background operation demo activity
-        Button backgroundDemoButton = (Button) findViewById(R.id.my_background_demo_button);
-        backgroundDemoButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, BackgroundOperationDemoActivity.class);
-                MainActivity.this.startActivity(intent);
-            }
-        });
+        onClick(R.id.my_background_demo_button, MainActivity.this, BackgroundOperationDemoActivity.class);
+        onClick(R.id.my_services_demo_button, MainActivity.this, ServiceFeedbackActivity.class);
     }
 
     @Override

@@ -1,4 +1,4 @@
-package com.bootstragram.demo;
+package com.bootstragram.demo.currencyrates;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -10,8 +10,6 @@ import org.xmlpull.v1.XmlPullParserException;
 
 import android.util.Log;
 import android.util.Xml;
-
-import com.bootstragram.demo.currencyrates.CurrencyRate;
 
 /**
  * This parser is 90% inspired by the following tutorial: <a
