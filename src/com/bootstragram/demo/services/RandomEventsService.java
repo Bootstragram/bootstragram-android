@@ -31,8 +31,9 @@ public class RandomEventsService extends IntentService {
 
         while (true) {
             final RandomSingleton singleton = RandomSingleton.getInstance();
+            singleton.increment();
 
-            long endTime = System.currentTimeMillis() + 5 * 1000;
+            long endTime = System.currentTimeMillis() + 2 * 1000;
             Log.d(TAG, "Waking up at " + endTime);
             while (System.currentTimeMillis() < endTime) {
                 synchronized (this) {
